@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="#F5F5F5"
+    >
+    <!--
+   must write com.android.volley.toolbox.NetworkImageView
+   instead of NetworkImageView....
+    much time on this bug
+-->
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imageView"
+        style="@style/NetworkImageView"
+        android:adjustViewBounds="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:id="@+id/linearLayout">
+        <TextView
+            style="@style/TextViewInItem"
+            android:id="@+id/textViewTitle"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp" />
+        <TextView
+            style="@style/TextViewAuthor"
+            android:id="@+id/textViewAuthor"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+    </LinearLayout>
+<Button
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:id="@+id/star"
+    android:background="@mipmap/blue_star"
+    android:layout_alignParentBottom="true"
+    android:layout_toLeftOf="@+id/map"
+    android:layout_toStartOf="@+id/map" />
+    <Button
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/map"
+        android:background="@mipmap/blue_location"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+

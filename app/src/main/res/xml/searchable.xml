@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/search_label"
+    android:hint="@string/search_books" />
+<!--can't be hardcoded string here!!!!!
+     If I don't see it in stackOverFlow
+     never will I find it...-->
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/textview_border">
+        <!--this linear layout is for drawing border
+             if drawing in textView layout_width must be set ,then ems is useless-->
+        <TextView
+            android:id="@+id/book_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ems="1"
+            android:textSize="15sp"
+            android:ellipsize="end"
+            />
+    </LinearLayout>
+
+</LinearLayout>
