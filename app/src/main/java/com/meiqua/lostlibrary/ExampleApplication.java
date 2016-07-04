@@ -23,12 +23,12 @@ import com.meiqua.util.LruBitmapCache;
 public class ExampleApplication extends Application {
 
   //0s
-  public static final String TAG = ExampleApplication.class.getSimpleName();
+  private static final String TAG = ExampleApplication.class.getSimpleName();
 
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
 
-    private static ExampleApplication mInstance;
+    public static ExampleApplication mInstance;
 
     @Override
     public void onCreate() {

@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
 
     private final String TAG = "MainActivity";
     private final String url = "http://115.28.205.144:8080/library/struts2/dispatch";
-                                  //this is my server url 
-
+                                  //this is my server url
     public String getUrl() {
         return url;
     }
@@ -81,6 +80,8 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
 
     static Context context;
     //this is for share-Preferences
+
+     public static Context mainActivityInstance;
 
     public static String file = "MyCollection";
     //this is where collection data saved
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mainActivityInstance=this;
         context = getApplicationContext();
 
         pDialog = new ProgressDialog(this);
@@ -194,35 +196,9 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
             getData(response, "getShelf", bookShelfFragment.getItemList(), bookShelfFragment.getAdapter());
         } else if (tag.equals("update")) {
             getData(url + "?key=update" + "&content=" + query, tag);
-        }else if(tag.equals("return"))
-        {
+        }else if(tag.equals("return")) {
             getData(url + "?key=return" + "&content=" + query, tag);
         }
-
-        //        StringRequest postReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                if (error != null)
-//                    VolleyLog.d(TAG, "Error: " + error.getMessage());
-//            }
-//        }
-//        ) {
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String, String> params = new HashMap<String, String>();
-//                params.put(tag, query);
-//                //post a map.
-//                return params;
-//            }
-//        };
-        //  postReq.setTag(tag);
-        //    ExampleApplication.getInstance().addToRequestQueue(postReq, tag);
-        //set tag so post can be cancelled in onDestroy.
     }
 
     private void getData(String url, String tag)
@@ -308,9 +284,6 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
         Log.i("-data->", "url " + url + "  key " + key + "  content " + content);
         //this is a simple parse,so
         //don't change the url in get data
-//
-//
-
 
         Log.i("-data->", "get data is called");
         //1  getdata from url
@@ -399,71 +372,9 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
                 return params;
             }
         };
-//        JsonArrayRequest itemReq = new JsonArrayRequest(url,
-//                new Response.Listener<JSONArray>() {
-//                    @Override
-//                    public void onResponse(JSONArray response) {
-//                        Log.d(TAG, response.toString());
-//                        Log.i("-data->", "get " + response);
-//                        hidePDialog();
-//                        // Parsing json
-//                        for (int i = 0; i < response.length(); i++) {
-//                            try {
-//                                JSONObject obj = response.getJSONObject(i);
-//                                item mitem = new item();
-//                                if (obj.getString("author") != null) {
-//                                    try {
-//                                        mitem.setAuthor(URLDecoder.decode(obj.getString("author"), "UTF-8"));
-//                                        Log.i("-data->", "get " + mitem.getAuthor());
-//                                    } catch (UnsupportedEncodingException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                }
-//                                if (obj.getString("title") != null){
-//                                    try {
-//                                        mitem.setTitle(URLDecoder.decode(obj.getString("title"), "UTF-8"));
-//                                    } catch (UnsupportedEncodingException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                }
-//                                if (obj.get("thumbnailUrl") != null)
-//                                    mitem.setThumbnailUrl(obj.getString("thumbnailUrl"));
-//                            //    Log.i("images",mitem.getThumbnailUrl());
-//
-//                                if (obj.getString("id") != null)
-//                                    mitem.setId(obj.getString("id"));
-//                                if (obj.getString("location") != null)
-//                                    mitem.setLocation(obj.getString("location"));
-//                                //request for data
-//                                //data must have these feature: Json "image"  "title"  "author"
-//                         //       if (obj.getString("id") != null)
-//
-//                                    itemList.add(mitem);
-//                                Log.i("-data->", "get " + itemList.size());
-//                            } catch (JSONException e) {
-//                                e.printStackTrace();
-//                            }
-//                        }
-//                        adapter.notifyDataSetChanged();
-//                    }
-//                }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                Log.i("-data->", "get error");
-//                if (error != null) {
-//                    VolleyLog.d(TAG, "Error: " + error.getMessage());
-//                    Log.i("-data->", "get error" + error.getMessage());
-//                } else
-//                    Log.i("-data->", "get error null");
-//                hidePDialog();
-//            }
-//        });
         itemReq.setTag(tag);
         ExampleApplication.getInstance().addToRequestQueue(itemReq, tag);
-
-
         //1
-
     }
 
     @Override
@@ -490,7 +401,6 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.menu_go) {
             dialogGo();
             //deal with the item "go" in mapFragment
@@ -500,7 +410,6 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
                 onBackPressed();
                 //deal with the back button of the phone
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -619,8 +528,7 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
         return flag;
     }
 
-
-    //following method is for 2D ma(二维码 0。0).When scan finished it will be called
+    //following method is for 2D code(二维码 0。0).When scan finished it will be called
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
@@ -657,24 +565,16 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
                 jsonObject=null;
                 scanContentReady="";
             }
-
             //  Toast.makeText(this, "Scanned: " + scanContent, Toast.LENGTH_LONG).show();
 
         }
         getFragmentManager().findFragmentByTag("returnFragment")
                 .onActivityResult(requestCode, resultCode, data);
     }
-        // This is important, otherwise the result will not be passed to the fragment
-
 
     private void hidePDialog() {
         if (pDialog != null) {
             pDialog.dismiss();
-            // pDialog = null;
-            //don't set pDialog=null !!!!!!!!!!!!!!!!
-            //pDialog has just one instance but used for several times
-            //several hours on this bug...
-
         }
     }
 
@@ -694,43 +594,5 @@ public class MainActivity extends AppCompatActivity { //default is extends actio
             }
         });
         builder.create().show();
-
-        //following is a pickerView But it crashes on my phone..
-//         final ArrayList<String> options1Items = new ArrayList<String>();
-//         final ArrayList<ArrayList<String>> options2Items = new ArrayList<ArrayList<String>>();
-//        OptionsPopupWindow pwOptions;
-//        pwOptions = new OptionsPopupWindow(this);
-//        options1Items.add("1");
-//        options1Items.add("2");
-//        options1Items.add("3");
-//        ArrayList<String> options2Items_01=new ArrayList<String>();
-//        options2Items_01.add("A");
-//        options2Items_01.add("B");
-//        options2Items_01.add("C");
-//        ArrayList<String> options2Items_02=new ArrayList<String>();
-//        options2Items_02.add("A");
-//        options2Items_02.add("B");
-//        options2Items_02.add("C");
-//        options2Items.add(options2Items_01);
-//        options2Items.add(options2Items_02);
-//        //maybe don't need to add two item here
-//        //but I'm too lazy to change it..
-//        pwOptions.setPicker(options1Items, options2Items,true);
-//        pwOptions.setLabels("楼", "室");
-
-//        pwOptions.setOnoptionsSelectListener(new OptionsPopupWindow.OnOptionsSelectListener() {
-//
-//            @Override
-//            public void onOptionsSelect(int options1, int option2) {
-//                String tx = options1Items.get(options1)
-//                        + options2Items.get(options1).get(option2);
-//                android.support.v7.widget.Toolbar toolbar
-//                        = (android.support.v7.widget.Toolbar) findViewById(R.id.tool_bar);
-//                toolbar.setTitle("Welcome to " + tx);
-//            }
-//        });
-//        android.support.v7.widget.Toolbar toolbar
-//                = (android.support.v7.widget.Toolbar) findViewById(R.id.tool_bar);
-//        pwOptions.showAsDropDown(toolbar);
     }
 }

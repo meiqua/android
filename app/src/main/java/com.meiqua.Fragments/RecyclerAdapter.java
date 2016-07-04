@@ -29,6 +29,9 @@ import com.meiqua.model.item;
 
 import java.util.List;
 
+import static com.meiqua.lostlibrary.ExampleApplication.mInstance;
+import static com.meiqua.lostlibrary.MainActivity.mainActivityInstance;
+
 public class RecyclerAdapter extends android.support.v7.widget.RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     //pay attention to android.support.v7.widget.RecyclerView.Adapter<RecyclerAdapter.ViewHolder>
     // it must have android.support.v7.widget.
@@ -67,9 +70,8 @@ public class RecyclerAdapter extends android.support.v7.widget.RecyclerView.Adap
             mapBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                             final MainActivity mainActivity=(MainActivity)v.getContext();
+                    final MainActivity mainActivity=(MainActivity)mainActivityInstance;
                     //though it's  not recommended. I can't find a better way to change fragment.
-
 
                     FragmentManager fragmentManager =mainActivity.getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
