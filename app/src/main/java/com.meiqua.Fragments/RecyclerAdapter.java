@@ -79,7 +79,7 @@ public class RecyclerAdapter extends android.support.v7.widget.RecyclerView.Adap
 
                     MapFragment mapFragment=mainActivity.getMapFragment();
                     mapFragment.setMarker(dataset.get(getAdapterPosition()).getLocation());
-                    if(dataset.get(getAdapterPosition()).getState()<0) {
+                    if(dataset.get(getAdapterPosition()).getState()<=0) {
                         Toast.makeText(v.getContext(),"book has been fetched",Toast.LENGTH_LONG).show();
                     }
                     fragmentTransaction.add(R.id.fragment_container,mapFragment);
