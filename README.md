@@ -2,6 +2,7 @@
 
 图书定位系统android app(后台改了, 现在应该只能看个界面)  
 [app download](https://github.com/meiqua/bpsys-android/raw/master/app-release.apk)  
+![qr code](https://github.com/meiqua/bpsys-android/blob/master/qrcode.png)  
   
 ## flow chart
 ![server](https://github.com/meiqua/bpsys-android/blob/master/app.png)  
