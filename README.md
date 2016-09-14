@@ -8,12 +8,12 @@
 
 ## screenshots  
 ### menu  
-![menu](https://github.com/meiqua/bpsys-android/blob/master/screenshot/menu.png)  
+![menu](https://github.com/meiqua/bpsys-android/blob/master/screenshot/menu.png =360)  
 ### search  
-![search](https://github.com/meiqua/bpsys-android/blob/master/screenshot/search.png)  
+![search](https://github.com/meiqua/bpsys-android/blob/master/screenshot/search.png =360)  
 ### map  
-![map](https://github.com/meiqua/bpsys-android/blob/master/screenshot/map.png)  
+![map](https://github.com/meiqua/bpsys-android/blob/master/screenshot/map.png =360)  
 ### shelf  
-![shelf](https://github.com/meiqua/bpsys-android/blob/master/screenshot/shelf.png)  
+![shelf](https://github.com/meiqua/bpsys-android/blob/master/screenshot/shelf.png =360)  
 ### scan  
-![scan](https://github.com/meiqua/bpsys-android/blob/master/screenshot/scan.png)  
+![scan](https://github.com/meiqua/bpsys-android/blob/master/screenshot/scan.png =360)  
