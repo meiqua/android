@@ -4,4 +4,16 @@
 [app download](https://github.com/meiqua/bpsys-android/raw/master/app-release.apk)  
   
 ## flow chart
-![server](https://github.com/meiqua/bpsys-android/blob/master/app.png)
+![server](https://github.com/meiqua/bpsys-android/blob/master/app.png)  
+
+## screenshots  
+### menu  
+![menu](https://github.com/meiqua/bpsys-android/blob/master/screenshot/menu.png)  
+### search  
+![search](https://github.com/meiqua/bpsys-android/blob/master/screenshot/search.png)  
+### map  
+![map](https://github.com/meiqua/bpsys-android/blob/master/screenshot/map.png)  
+### shelf  
+![shelf](https://github.com/meiqua/bpsys-android/blob/master/screenshot/shelf.png)  
+### scan  
+![scan](https://github.com/meiqua/bpsys-android/blob/master/screenshot/scan.png)  
