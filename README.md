@@ -4,4 +4,4 @@
 [app download](https://github.com/meiqua/bpsys-android/raw/master/app-release.apk)  
   
 ## flow chart
-![server](https://github.com/meiqua/bpsys-server/blob/master/server.png)
+![server](https://github.com/meiqua/bpsys-android/blob/master/app.png)
