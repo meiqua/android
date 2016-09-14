@@ -1,6 +1,4 @@
-# android  
-  
-##　[whole project](https://github.com/meiqua/bpsys)  
+# [bpsys](https://github.com/meiqua/bpsys)-android  
   
 图书定位系统android app(后台改了, 现在应该只能看个界面)  
   
